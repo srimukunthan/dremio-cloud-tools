@@ -18,12 +18,12 @@ coordinator:
     port: 9047
   client:
     port: 31010
-  volumeSize: 100Gi
+  volumeSize: 4Gi
 executor:
   memory: 10000
   cpu: 8
   count: 3
-  volumeSize: 100Gi
+  volumeSize: 4Gi
   cloudCache:
     # Requires Dremio version 4.0.0 or later
     enabled: true
@@ -42,7 +42,7 @@ zookeeper:
   memory: 1024
   cpu: 2
   count: 3
-  volumeSize: 10Gi
+  volumeSize: 4Gi
 
 # To create a TLS secret, use the following command:
 # kubectl create secret tls ${TLS_SECRET_NAME} --key ${KEY_FILE} --cert ${CERT_FILE}
