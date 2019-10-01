@@ -9,7 +9,7 @@ imageTag: latest
 # The value of memory should be in MB. CPU is in no of cores.
 coordinator:
   memory: 10000
-  cpu: 4
+  cpu: 2
   # This count is for slave coordinators only.
   # The chart will always create one master coordinator - you are
   # not required to have more than one master coordinator.
@@ -21,7 +21,7 @@ coordinator:
   volumeSize: 4Gi
 executor:
   memory: 10000
-  cpu: 4
+  cpu: 2
   count: 3
   volumeSize: 4Gi
   cloudCache:
@@ -40,7 +40,7 @@ executor:
       cache_pct: 100
 zookeeper:
   memory: 1024
-  cpu: 2
+  cpu: 0.5
   count: 3
   volumeSize: 4Gi
 
