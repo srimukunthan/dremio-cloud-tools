@@ -8,7 +8,7 @@ imageTag: latest
 # the coordinators and the executors.
 # The value of memory should be in MB. CPU is in no of cores.
 coordinator:
-  memory: 10000
+  memory: 1000
   cpu: 1
   # This count is for slave coordinators only.
   # The chart will always create one master coordinator - you are
@@ -20,7 +20,7 @@ coordinator:
     port: 31010
   volumeSize: 4Gi
 executor:
-  memory: 10000
+  memory: 1000
   cpu: 1
   count: 3
   volumeSize: 4Gi
