@@ -57,24 +57,6 @@ spec:
         ports:
         - containerPort: 45678
           name: server
-      initContainers:
-      - name: wait-for-zk
-        image: busybox
-        command:  ["sh", "-c", "until ping -c 1 -W 1 zk-hs > /dev/null; do echo waiting for zookeeper host; sleep 2; done;"]
-      # since we're mounting a separate volume, reset permission to
-      # dremio uid/gid
-      - name: chown-data-directory
-        image: {{.Values.image}}:{{.Values.imageTag}}
-        imagePullPolicy: IfNotPresent
-        securityContext:
-          runAsUser: 0
-        volumeMounts:
-        - name: dremio-executor-volume
-          mountPath: /opt/dremio/data
-        command: ["chown"]
-        args:
-        - "dremio:dremio"
-        - "/opt/dremio/data"
       volumes:
       - name: dremio-config
         configMap:
