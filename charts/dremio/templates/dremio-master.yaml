@@ -73,6 +73,7 @@ spec:
           nodePort: 32279
         - containerPort: 31010
           name: client
+          nodePort: 32288
         - containerPort: 45678
           name: server
         readinessProbe:
